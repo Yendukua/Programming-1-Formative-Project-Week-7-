@@ -11,10 +11,10 @@ calls functions. That makes it easier to read and change later.
 from tracker import GradeTracker
 
 # get_menu_choice() asks the user for a menu number and checks it.
-from validators import get_menu_choice
+#from validators import get_menu_choice
 
 # The menu action functions do the work for options 1, 2 and 4.
-from menu_actions import add_homework, add_exam, filter_menu
+#from menu_actions import add_homework, add_exam, filter_menu
 
 
 def main():
@@ -35,7 +35,7 @@ def main():
         print("0) Exit")
 
         # get_menu_choice() will keep asking until the user types a valid option
-        choice = get_menu_choice()
+        #choice = get_menu_choice()
 
         # route the choice to the right place
         if choice == "1":
