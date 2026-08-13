@@ -36,4 +36,3 @@ Notes
 - No external libraries required.
 - Keep all files together so imports work.
 
-If you want the README even shorter or to change the tone, tell me how you write and I'll adjust it.
