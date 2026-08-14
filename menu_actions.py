@@ -1,4 +1,4 @@
-each function has ONE clear job.
+#each function has ONE clear job.
 """
 menu_actions.py
 
@@ -15,7 +15,7 @@ from assignments import Homework, Exam
 
 # I import a helper that checks numbers for me so I don't have to repeat
 # the validation logic in every menu function.
-from validators import get_valid_score
+from validators import get_valid_score, get_valid_date, get_valid_month
 
 
 def add_homework(tracker):
@@ -35,7 +35,7 @@ def add_homework(tracker):
         print("A score cannot be greater than the max score. Homework was not added.\n")
         return
 
-    due_date = input("Due date (YYYY-MM-DD): ")
+    due_date = get_valid_date("Due date (YYYY-MM-DD): ")
 
     # I create a Homework object and give it to the tracker to store.
     homework = Homework(subject, title, score, max_score, due_date)
@@ -57,7 +57,7 @@ def add_exam(tracker):
         print("A score cannot be greater than the max score. Exam was not added.\n")
         return
 
-    due_date = input("Due date (YYYY-MM-DD): ")
+    due_date = get_valid_date("Due date (YYYY-MM-DD): ")
     exam = Exam(subject, title, score, max_score, due_date)
     tracker.add_assignment(exam)
 
@@ -82,7 +82,7 @@ def filter_menu(tracker):
         atype = input("Enter type (homework/exam): ")
         results = tracker.filter_assignments(atype=atype)
     elif sub_choice == "3":
-        month = input("Enter month (YYYY-MM): ")
+        month = get_valid_month("Enter month (YYYY-MM): ")
         results = tracker.filter_assignments(month=month)
     else:
         print("That is not a valid filter option.")
